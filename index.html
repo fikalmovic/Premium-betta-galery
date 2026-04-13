@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Betta Gallery – Jual Ikan Cupang Batam</title>
+<meta name="description" content="Jual Ikan Cupang Batam terpercaya. Premium Betta Gallery menyediakan ikan cupang Halfmoon, Plakat, Giant, Crowntail berkualitas. Garansi DOA, packing aman oksigen + sterofoam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #7a6330;
+    --deep: #04070f;
+    --navy: #070d1a;
+    --midnight: #0a1628;
+    --teal: #0d4a5c;
+    --cyan: #00d4ff;
+    --cyan-dim: #0899b8;
+    --white: #f0eee8;
+    --muted: #8a8070;
+    --glass: rgba(10,22,40,0.7);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep);
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--cyan);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, opacity 0.2s;
+    mix-blend-mode: screen;
+    transform: translate(-50%,-50%);
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: transform 0.35s ease, width 0.3s, height 0.3s;
+    opacity: 0.6;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--deep); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%;
+    z-index: 1000;
+    padding: 0 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+    background: linear-gradient(180deg, rgba(4,7,15,0.98) 0%, rgba(4,7,15,0) 100%);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    backdrop-filter: blur(12px);
+    transition: background 0.3s;
+  }
+  nav.scrolled {
+    background: rgba(4,7,15,0.97);
+    border-bottom-color: rgba(201,168,76,0.3);
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; line-height: 1;
+  }
+  .nav-logo .brand {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .nav-logo .sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .nav-links {
+    display: flex; gap: 2.2rem; list-style: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* CATEGORY BADGES */
+  .nav-links .badge {
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 3px;
+    padding: 2px 8px;
+    color: var(--gold-light);
+    font-size: 0.65rem;
+  }
+
+  /* SEARCH BAR */
+  .nav-search {
+    display: flex; align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 20px;
+    padding: 6px 14px;
+    transition: border-color 0.3s;
+  }
+  .nav-search:focus-within { border-color: var(--gold); }
+  .nav-search input {
+    background: none; border: none; outline: none;
+    color: var(--white);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    width: 140px;
+  }
+  .nav-search input::placeholder { color: var(--muted); }
+  .nav-search svg { opacity: 0.5; flex-shrink: 0; }
+
+  /* ── HERO VIDEO BANNER ── */
+  #hero {
+    position: relative;
+    width: 100%; height: 100vh;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Animated fish canvas as video replacement */
+  #fishCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(4,7,15,0.35) 0%,
+      rgba(4,7,15,0.15) 40%,
+      rgba(4,7,15,0.65) 80%,
+      rgba(4,7,15,0.98) 100%
+    );
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+    animation: heroFadeIn 1.8s ease forwards;
+    opacity: 0;
+  }
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+    opacity: 0;
+    animation: heroFadeIn 1.2s 0.4s ease forwards;
+  }
+  .hero-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(2.2rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--white) 50%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: heroFadeIn 1.2s 0.7s ease forwards;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(240,238,232,0.75);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: heroFadeIn 1.2s 1s ease forwards;
+  }
+  .hero-kw {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--cyan-dim);
+    margin-bottom: 2.8rem;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: heroFadeIn 1.2s 1.2s ease forwards;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    opacity: 0;
+    animation: heroFadeIn 1.2s 1.4s ease forwards;
+  }
+  .btn-gold {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--deep);
+    border: none;
+    border-radius: 2px;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.25s, box-shadow 0.25s;
+    font-weight: 600;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+  }
+  .btn-outline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(240,238,232,0.4);
+    border-radius: 2px;
+    cursor: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+  }
+  .scroll-indicator {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 7rem 3rem; }
+  .section-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(1.6rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .section-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(240,238,232,0.6);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── MARQUEE STRIP ── */
+  .marquee-strip {
+    background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+    padding: 14px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    color: var(--deep);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-sep { margin: 0 2rem; opacity: 0.5; }
+
+  /* ── CATEGORIES ── */
+  #categories { background: var(--navy); }
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    margin-top: 3.5rem;
+  }
+  .cat-card {
+    position: relative;
+    overflow: hidden;
+    height: 420px;
+    cursor: none;
+  }
+  .cat-bg {
+    position: absolute; inset: 0;
+    transition: transform 0.7s ease;
+  }
+  .cat-card:hover .cat-bg { transform: scale(1.07); }
+  .cat-card .plakat-bg  { background: radial-gradient(ellipse at 40% 60%, #1a4a6e 0%, #040810 70%); }
+  .cat-card .giant-bg   { background: radial-gradient(ellipse at 60% 40%, #1a3a5c 0%, #060b16 70%); }
+  .cat-card .crown-bg   { background: radial-gradient(ellipse at 50% 50%, #0d3d4a 0%, #040810 70%); }
+  .cat-fish {
+    position: absolute;
+    width: 260px;
+    animation: fishFloat 6s ease-in-out infinite;
+  }
+  .cat-card:nth-child(1) .cat-fish { bottom: 60px; right: -10px; animation-delay: 0s; }
+  .cat-card:nth-child(2) .cat-fish { bottom: 40px; left: 10px; animation-delay: -2s; }
+  .cat-card:nth-child(3) .cat-fish { bottom: 50px; right: 5px; animation-delay: -4s; }
+  @keyframes fishFloat {
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-18px) rotate(2deg); }
+  }
+  .cat-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(4,7,15,0.9) 0%, rgba(4,7,15,0.2) 60%, transparent 100%);
+  }
+  .cat-info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 2rem;
+    z-index: 2;
+  }
+  .cat-tag {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .cat-name {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .cat-desc-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: rgba(240,238,232,0.6);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .cat-link {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 8px;
+    transition: gap 0.3s;
+  }
+  .cat-link:hover { gap: 16px; }
+
+  /* ── NEW ARRIVALS ── */
+  #new-arrivals { background: var(--deep); }
+  .arrivals-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+  .arrivals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .fish-card {
+    background: var(--midnight);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    cursor: none;
+    transition: border-color 0.35s, transform 0.35s;
+  }
+  .fish-card:hover {
+    border-color: rgba(201,168,76,0.45);
+    transform: translateY(-6px);
+  }
+  .fish-card-img {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fish-card-canvas {
+    width: 100%; height: 100%;
+    display: block;
+  }
+  .fish-card-badge {
+    position: absolute; top: 14px; left: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .badge-new { background: var(--cyan); color: var(--deep); }
+  .badge-sold { background: rgba(255,80,80,0.85); color: #fff; }
+  .badge-rare { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--deep); }
+  .fish-card-body { padding: 1.4rem; }
+  .fish-card-category {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .fish-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .fish-card-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  .fish-card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .fish-price {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-light);
+  }
+  .fish-price span {
+    font-size: 0.65rem;
+    color: var(--muted);
+    display: block;
+    font-weight: 300;
+    margin-bottom: 2px;
+  }
+  .btn-cart {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    border-radius: 2px;
+    cursor: none;
+    transition: background 0.25s, border-color 0.25s;
+    text-decoration: none;
+  }
+  .btn-cart:hover {
+    background: rgba(201,168,76,0.12);
+    border-color: var(--gold);
+  }
+
+  /* ── PACKING & GARANSI ── */
+  #garansi { background: var(--midnight); position: relative; overflow: hidden; }
+  #garansi::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0,212,255,0.04) 0%, transparent 70%);
+  }
+  .garansi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+  .packing-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,212,255,0.15);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .packing-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan) 0%, transparent 100%);
+  }
+  .packing-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+  .packing-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+  .packing-steps { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .packing-steps li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(240,238,232,0.7);
+    display: flex; gap: 1rem; align-items: flex-start;
+    line-height: 1.5;
+  }
+  .step-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    color: var(--cyan);
+    letter-spacing: 0.1em;
+    min-width: 24px;
+    margin-top: 3px;
+  }
+  .doa-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 4px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .doa-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+  }
+  .doa-highlight {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 3px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.6;
+  }
+  .doa-rules { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
+  .doa-rules li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: rgba(240,238,232,0.65);
+    display: flex; gap: 0.8rem; align-items: flex-start;
+    line-height: 1.5;
+  }
+  .doa-rules li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── ABOUT / WHY US ── */
+  #about { background: var(--deep); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .why-item {
+    text-align: center;
+    padding: 2rem 1rem;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 4px;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .why-item:hover {
+    border-color: rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.04);
+  }
+  .why-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .why-num {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .why-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .why-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--navy); }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .testi-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+  }
+  .testi-quote {
+    font-size: 4rem;
+    color: var(--gold-dim);
+    font-family: 'Cinzel Decorative', cursive;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(240,238,232,0.75);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+  .testi-author {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--cyan-dim));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .testi-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .testi-loc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 0.8rem; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--midnight); }
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .contact-item {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    margin-bottom: 1.8rem;
+  }
+  .contact-icon-box {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+  }
+  .contact-item-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .contact-item-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    line-height: 1.5;
+  }
+  .contact-item-val a { color: var(--gold-light); text-decoration: none; }
+  .contact-item-val a:hover { text-decoration: underline; }
+  .contact-wa {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #25D366;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s;
+  }
+  .contact-wa:hover { opacity: 0.88; }
+  .contact-form { }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--gold); }
+  .form-group select option { background: var(--midnight); }
+  .form-submit {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--deep);
+    border: none;
+    border-radius: 2px;
+    cursor: none;
+    font-weight: 600;
+    transition: transform 0.25s, box-shadow 0.25s;
+    width: 100%;
+  }
+  .form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.35);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 4rem 3rem 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .brand {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+  .footer-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 280px;
+  }
+  .footer-col h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-col ul li a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .footer-socials { display: flex; gap: 1rem; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: border-color 0.25s, color 0.25s;
+  }
+  .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── MOBILE RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    .categories-grid { grid-template-columns: 1fr; }
+    .arrivals-grid { grid-template-columns: 1fr 1fr; }
+    .garansi-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .arrivals-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+  @media (max-width: 540px) {
+    .arrivals-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+  }
+
+  /* ── ANIMATIONS ON SCROLL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* Toast notification */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--midnight);
+    border: 1px solid var(--gold);
+    color: var(--white);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    padding: 14px 20px;
+    border-radius: 4px;
+    z-index: 9997;
+    transform: translateX(120%);
+    transition: transform 0.4s ease;
+  }
+  .toast.show { transform: translateX(0); }
+
+  /* Floating WA button */
+  .wa-float {
+    position: fixed; bottom: 2rem; left: 2rem;
+    width: 54px; height: 54px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none;
+    transition: transform 0.25s, box-shadow 0.25s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+  @keyframes waPulse {
+    0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 30px rgba(37,211,102,0.65); }
+  }
+  .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- FLOATING WA BUTTON -->
+<a href="https://wa.me/628123456789?text=Halo%20Premium%20Betta%20Gallery%2C%20saya%20ingin%20order%20ikan%20cupang" target="_blank" class="wa-float" title="Chat WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.819.736 5.463 2.023 7.754L0 32l8.486-2.002A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.602 0-5.037-.697-7.135-1.913l-.511-.306-5.034 1.188 1.212-4.919-.337-.537A13.282 13.282 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667c7.364 0 13.333 5.969 13.333 13.333 0 7.364-5.969 13.333-13.333 13.333zm7.307-9.895c-.4-.2-2.368-1.168-2.734-1.302-.366-.133-.633-.2-.9.2-.267.4-1.034 1.302-1.267 1.568-.233.267-.467.3-.867.1-.4-.2-1.688-.622-3.215-1.984-1.188-1.06-1.99-2.368-2.222-2.768-.233-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.168-1.234-2.968-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5s-1.4 1.368-1.4 3.335 1.433 3.867 1.633 4.133c.2.267 2.822 4.306 6.833 6.035.955.413 1.7.659 2.28.843.958.305 1.831.262 2.521.159.769-.114 2.368-.968 2.701-1.902.333-.934.333-1.735.233-1.902-.1-.167-.367-.267-.767-.467z"/></svg>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Ditambahkan ke keranjang</div>
+
+<!-- ══════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span class="brand">Premium Betta Gallery</span>
+    <span class="sub">Jual Ikan Cupang Batam</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Beranda</a></li>
+    <li><a href="#categories">Koleksi</a></li>
+    <li><a href="#categories" class="badge">Plakat</a></li>
+    <li><a href="#categories" class="badge">Giant</a></li>
+    <li><a href="#categories" class="badge">Crowntail</a></li>
+    <li><a href="#new-arrivals">New Arrivals</a></li>
+    <li><a href="#garansi">Garansi</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+  <div class="nav-search">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" placeholder="Cari ikan cupang..." id="searchInput" onkeydown="doSearch(event)">
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO BANNER (Animated Canvas)
+══════════════════════════════════════════════ -->
+<section id="hero">
+  <canvas id="fishCanvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">🐟 Batam's Finest Betta Store</p>
+    <h1 class="hero-title">Premium<br>Betta Gallery</h1>
+    <p class="hero-subtitle">Keindahan yang Bersemayam di Setiap Sirip</p>
+    <p class="hero-kw">Jual Ikan Cupang Batam · Halfmoon · Plakat · Giant · Crowntail</p>
+    <div class="hero-ctas">
+      <a href="#new-arrivals" class="btn-gold">Lihat Koleksi</a>
+      <a href="#contact" class="btn-outline">Order Sekarang</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    🐟 Jual Ikan Cupang Batam <span class="marquee-sep">•</span>
+    Garansi DOA <span class="marquee-sep">•</span>
+    Packing Oksigen + Sterofoam <span class="marquee-sep">•</span>
+    Halfmoon Premium <span class="marquee-sep">•</span>
+    Plakat HM <span class="marquee-sep">•</span>
+    Giant Betta <span class="marquee-sep">•</span>
+    Crowntail <span class="marquee-sep">•</span>
+    Free Ongkir Batam <span class="marquee-sep">•</span>
+    Pengiriman Seluruh Indonesia <span class="marquee-sep">•</span>
+    🐟 Jual Ikan Cupang Batam <span class="marquee-sep">•</span>
+    Garansi DOA <span class="marquee-sep">•</span>
+    Packing Oksigen + Sterofoam <span class="marquee-sep">•</span>
+    Halfmoon Premium <span class="marquee-sep">•</span>
+    Plakat HM <span class="marquee-sep">•</span>
+    Giant Betta <span class="marquee-sep">•</span>
+    Crowntail <span class="marquee-sep">•</span>
+    Free Ongkir Batam <span class="marquee-sep">•</span>
+    Pengiriman Seluruh Indonesia <span class="marquee-sep">•</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     CATEGORIES
+══════════════════════════════════════════════ -->
+<section id="categories">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label reveal">Koleksi Kami</div>
+    <h2 class="section-title reveal reveal-delay-1">Pilih Jenis Favoritmu</h2>
+    <p class="section-desc reveal reveal-delay-2">Dari fighter berkelas hingga ekor mahkota yang menakjubkan — setiap ekor dipilih dengan standar premium tertinggi.</p>
+
+    <div class="categories-grid reveal reveal-delay-2">
+      <!-- PLAKAT -->
+      <div class="cat-card">
+        <div class="cat-bg plakat-bg"></div>
+        <canvas class="cat-fish" id="catFish1" width="260" height="200" style="position:absolute;bottom:40px;right:-10px;"></canvas>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <div class="cat-tag">Kategori 01</div>
+          <div class="cat-name">Plakat</div>
+          <div class="cat-desc-text">Short-fin warrior, warna solid & metallic memukau</div>
+          <a href="#new-arrivals" class="cat-link">Lihat Semua <span>→</span></a>
+        </div>
+      </div>
+      <!-- GIANT -->
+      <div class="cat-card">
+        <div class="cat-bg giant-bg"></div>
+        <canvas class="cat-fish" id="catFish2" width="260" height="200" style="position:absolute;bottom:30px;left:10px;"></canvas>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <div class="cat-tag">Kategori 02</div>
+          <div class="cat-name">Giant</div>
+          <div class="cat-desc-text">Ukuran jumbo 7–12 cm, tubuh gagah & megah</div>
+          <a href="#new-arrivals" class="cat-link">Lihat Semua <span>→</span></a>
+        </div>
+      </div>
+      <!-- CROWNTAIL -->
+      <div class="cat-card">
+        <div class="cat-bg crown-bg"></div>
+        <canvas class="cat-fish" id="catFish3" width="260" height="200" style="position:absolute;bottom:40px;right:5px;"></canvas>
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <div class="cat-tag">Kategori 03</div>
+          <div class="cat-name">Crowntail</div>
+          <div class="cat-desc-text">Ekor seperti mahkota raja, keanggunan tiada tara</div>
+          <a href="#new-arrivals" class="cat-link">Lihat Semua <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     NEW ARRIVALS
+══════════════════════════════════════════════ -->
+<section id="new-arrivals">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="arrivals-header">
+      <div>
+        <div class="section-label reveal">Stok Terbaru</div>
+        <h2 class="section-title reveal reveal-delay-1">New Arrivals</h2>
+      </div>
+      <a href="#contact" class="btn-outline reveal">Lihat Semua →</a>
+    </div>
+
+    <div class="arrivals-grid" id="arrivalsGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PACKING & GARANSI DOA
+══════════════════════════════════════════════ -->
+<section id="garansi">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label reveal">Keamanan & Kepercayaan</div>
+    <h2 class="section-title reveal reveal-delay-1">Packing & Garansi DOA</h2>
+    <p class="section-desc reveal reveal-delay-2">Kami memastikan setiap ikan tiba dalam kondisi sehat dan prima di tanganmu.</p>
+
+    <div class="garansi-grid">
+      <!-- PACKING -->
+      <div class="packing-card reveal">
+        <div class="packing-icon">📦</div>
+        <div class="packing-title">Sistem Packing Premium</div>
+        <ul class="packing-steps">
+          <li><span class="step-num">01</span> <span><strong style="color:var(--cyan)">Oksigenasi Penuh</strong> — Setiap kantong plastik diisi oksigen murni menggunakan kompresor khusus, menjamin kadar O₂ optimal selama perjalanan 24–48 jam.</span></li>
+          <li><span class="step-num">02</span> <span><strong style="color:var(--cyan)">Double Plastik</strong> — Kantong berlapis ganda untuk mencegah kebocoran dan benturan.</span></li>
+          <li><span class="step-num">03</span> <span><strong style="color:var(--cyan)">Sterofoam Box</strong> — Box sterofoam tebal menjaga suhu stabil 24–28°C selama pengiriman, mengisolasi dari panas dan guncangan.</span></li>
+          <li><span class="step-num">04</span> <span><strong style="color:var(--cyan)">Bubble Wrap</strong> — Pembungkus tambahan di sekeliling kantong untuk perlindungan fisik maksimal.</span></li>
+          <li><span class="step-num">05</span> <span><strong style="color:var(--cyan)">Label Fragile</strong> — Setiap paket diberi label LIVE FISH dan FRAGILE agar ditangani dengan hati-hati oleh kurir.</span></li>
+        </ul>
+      </div>
+
+      <!-- DOA GUARANTEE -->
+      <div class="doa-card reveal reveal-delay-2">
+        <div class="packing-icon">🛡️</div>
+        <div class="packing-title">Garansi Dead on Arrival (DOA)</div>
+        <div class="doa-highlight">
+          "Kami menjamin penggantian ikan atau refund penuh jika ikan tiba dalam kondisi mati (DOA) akibat kesalahan packing atau pengiriman."
+        </div>
+        <ul class="doa-rules">
+          <li>Klaim DOA diterima maksimal <strong>2 jam</strong> setelah paket diterima</li>
+          <li>Sertakan foto/video unboxing sebagai bukti klaim</li>
+          <li>Berlaku untuk semua produk di Premium Betta Gallery</li>
+          <li>Penggantian ikan dengan spesies sama atau refund via transfer</li>
+          <li>Proses klaim cepat, maks 1×24 jam hari kerja</li>
+          <li>Tidak berlaku jika ikan sengaja dilukai atau diperlakukan tidak layak</li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <a href="https://wa.me/628123456789?text=Saya%20ingin%20klaim%20DOA" target="_blank" class="btn-gold" style="font-size:0.65rem;padding:10px 22px;">Klaim DOA via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     WHY US
+══════════════════════════════════════════════ -->
+<section id="about">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;">
+    <div class="section-label reveal">Mengapa Kami</div>
+    <h2 class="section-title reveal reveal-delay-1" style="margin:0 auto 1rem;">Kepercayaan 500+ Pelanggan</h2>
+    <p class="section-desc reveal reveal-delay-2" style="margin:0 auto;">Berdiri sejak 2018, kami adalah toko ikan cupang terpercaya di Batam dengan ribuan ekor berhasil dikirim ke seluruh Indonesia.</p>
+
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-icon">🏆</div>
+        <span class="why-num">500+</span>
+        <div class="why-label">Pelanggan Puas</div>
+        <div class="why-desc">Pembeli setia dari Sabang sampai Merauke</div>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-icon">🐟</div>
+        <span class="why-num">1200+</span>
+        <div class="why-label">Ekor Terkirim</div>
+        <div class="why-desc">Setiap ekor tiba selamat dan sehat</div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-icon">⭐</div>
+        <span class="why-num">4.9</span>
+        <div class="why-label">Rating Rata-rata</div>
+        <div class="why-desc">Ulasan positif di Tokopedia & Shopee</div>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="why-icon">📍</div>
+        <span class="why-num">6th</span>
+        <div class="why-label">Tahun Berdiri</div>
+        <div class="why-desc">Toko ikan cupang Batam sejak 2018</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════ -->
+<section id="testimonials">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label reveal">Ulasan Pembeli</div>
+    <h2 class="section-title reveal reveal-delay-1">Kata Mereka</h2>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Beli Halfmoon Blue Marble, sampai dalam kondisi sangat sehat! Packing sterofoam + oksigen top banget. Udah beli 3x dan gak pernah kecewa.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">AR</div>
+          <div>
+            <div class="testi-name">Andi Ramadhan</div>
+            <div class="testi-loc">Jakarta Selatan</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-text">Giant bettanya gede banget dan warnanya MANTAP. Pelayanan ramah, respon cepat, harga wajar untuk kualitas segini. Recommended seller!</div>
+        <div class="testi-author">
+          <div class="testi-avatar">SN</div>
+          <div>
+            <div class="testi-name">Sinta Noviana</div>
+            <div class="testi-loc">Surabaya</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-text">DOA claim saya diproses dalam 3 jam, langsung dikirim pengganti. Kepercayaan pembeli dijaga banget. Premium Betta Gallery emang beda!</div>
+        <div class="testi-author">
+          <div class="testi-avatar">BW</div>
+          <div>
+            <div class="testi-name">Bowo Wicaksono</div>
+            <div class="testi-loc">Medan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════ -->
+<section id="contact">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label reveal">Hubungi Kami</div>
+    <h2 class="section-title reveal reveal-delay-1">Order & Konsultasi</h2>
+
+    <div class="contact-wrapper">
+      <div class="contact-info reveal">
+        <h3>Informasi Kontak</h3>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">📱</div>
+          <div>
+            <div class="contact-item-label">WhatsApp / Telepon</div>
+            <div class="contact-item-val">
+              <a href="https://wa.me/628123456789">+62 812-3456-789</a><br>
+              <a href="https://wa.me/628987654321">+62 898-7654-321</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">📧</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-val">
+              <a href="mailto:order@premiumbettagallery.com">order@premiumbettagallery.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">📍</div>
+          <div>
+            <div class="contact-item-label">Lokasi Toko</div>
+            <div class="contact-item-val">Jl. Anggrek No. 12, Batam Centre<br>Batam, Kepulauan Riau 29456</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">🕐</div>
+          <div>
+            <div class="contact-item-label">Jam Operasional</div>
+            <div class="contact-item-val">Senin – Sabtu: 08.00 – 20.00 WIB<br>Minggu: 09.00 – 17.00 WIB</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon-box">🛍️</div>
+          <div>
+            <div class="contact-item-label">Marketplace</div>
+            <div class="contact-item-val">
+              <a href="#">Tokopedia</a> &nbsp;·&nbsp;
+              <a href="#">Shopee</a> &nbsp;·&nbsp;
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/628123456789?text=Halo%20Premium%20Betta%20Gallery%2C%20saya%20mau%20order%20ikan%20cupang" target="_blank" class="contact-wa">
+          <svg width="20" height="20" viewBox="0 0 32 32" fill="#fff"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.819.736 5.463 2.023 7.754L0 32l8.486-2.002A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.307 19.438c-.4-.2-2.368-1.168-2.734-1.302-.366-.133-.633-.2-.9.2-.267.4-1.034 1.302-1.267 1.568-.233.267-.467.3-.867.1-.4-.2-1.688-.622-3.215-1.984-1.188-1.06-1.99-2.368-2.222-2.768-.233-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.168-1.234-2.968-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5s-1.4 1.368-1.4 3.335 1.433 3.867 1.633 4.133c.2.267 2.822 4.306 6.833 6.035.955.413 1.7.659 2.28.843.958.305 1.831.262 2.521.159.769-.114 2.368-.968 2.701-1.902.333-.934.333-1.735.233-1.902-.1-.167-.367-.267-.767-.467z"/></svg>
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" placeholder="Masukkan nama Anda">
+        </div>
+        <div class="form-group">
+          <label>Nomor WhatsApp</label>
+          <input type="tel" placeholder="08xxxxxxxxxx">
+        </div>
+        <div class="form-group">
+          <label>Kota Tujuan</label>
+          <input type="text" placeholder="Contoh: Jakarta, Surabaya, Medan">
+        </div>
+        <div class="form-group">
+          <label>Jenis Ikan Diminati</label>
+          <select>
+            <option>-- Pilih Kategori --</option>
+            <option>Halfmoon</option>
+            <option>Plakat HM</option>
+            <option>Giant Betta</option>
+            <option>Crowntail</option>
+            <option>Double Tail</option>
+            <option>Rosetail</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Pesan / Pertanyaan</label>
+          <textarea rows="4" placeholder="Tulis pertanyaan atau request spesial Anda..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Kirim Pesan via WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">Premium Betta Gallery</div>
+        <p>Toko ikan cupang premium di Batam. Spesialis Halfmoon, Plakat, Giant & Crowntail. Garansi DOA, packing oksigen + sterofoam, pengiriman seluruh Indonesia.</p>
+        <div style="margin-top:1.5rem;">
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:0.6rem;letter-spacing:0.3em;color:var(--gold);text-transform:uppercase;margin-bottom:0.6rem;">Tersedia di</div>
+          <div style="font-family:'Cormorant Garamond',serif;color:var(--muted);font-size:0.9rem;line-height:1.8;">
+            🛒 Tokopedia &nbsp;·&nbsp; Shopee<br>
+            📱 Instagram &nbsp;·&nbsp; TikTok Shop
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="#categories">Halfmoon</a></li>
+          <li><a href="#categories">Plakat</a></li>
+          <li><a href="#categories">Giant Betta</a></li>
+          <li><a href="#categories">Crowntail</a></li>
+          <li><a href="#categories">Double Tail</a></li>
+          <li><a href="#categories">Rosetail</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informasi</h4>
+        <ul>
+          <li><a href="#garansi">Garansi DOA</a></li>
+          <li><a href="#garansi">Cara Packing</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#testimonials">Ulasan</a></li>
+          <li><a href="#contact">Kebijakan Toko</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="https://wa.me/628123456789">+62 812-3456-789</a></li>
+          <li><a href="mailto:order@premiumbettagallery.com">Email Kami</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">TikTok</a></li>
+          <li style="color:var(--muted);font-size:0.88rem;font-style:italic;">Batam, Kepri</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 Premium Betta Gallery · Jual Ikan Cupang Batam · All Rights Reserved</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn" title="Instagram">ig</a>
+        <a href="#" class="social-btn" title="TikTok">tt</a>
+        <a href="#" class="social-btn" title="WhatsApp">wa</a>
+        <a href="#" class="social-btn" title="Shopee">sp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════ -->
+<script>
+/* ── CURSOR ── */
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e=>{
+  mx=e.clientX; my=e.clientY;
+  cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+});
+setInterval(()=>{
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+},16);
+document.querySelectorAll('a,button,.fish-card,.cat-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)'; ring.style.width='60px'; ring.style.height='60px';});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)'; ring.style.width='36px'; ring.style.height='36px';});
+});
+
+/* ── NAVBAR SCROLL ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY>80);
+});
+
+/* ── HERO CANVAS: Animated Halfmoon Fish ── */
+(function(){
+  const canvas = document.getElementById('fishCanvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, fish=[], bubbles=[];
+  
+  function resize(){ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Create fish
+  function makeFish(x, y, scale, delay, color1, color2){
+    return { x, y, vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.2, 
+             scale, t: delay||Math.random()*Math.PI*2, color1, color2, 
+             tailPhase: Math.random()*Math.PI*2, alpha: 0.85+Math.random()*0.15 };
+  }
+
+  const palette = [
+    ['#00aaff','#0044dd'], ['#ff3366','#990033'], ['#aa00ff','#5500cc'],
+    ['#00ffcc','#009966'], ['#ffaa00','#cc5500'], ['#ff66cc','#cc0066'],
+    ['#66ffff','#0099bb'], ['#ff9900','#ff3300']
+  ];
+
+  function initFish(){
+    fish=[];
+    const count = Math.min(8, Math.floor(W/160));
+    for(let i=0;i<count;i++){
+      const p = palette[i%palette.length];
+      fish.push(makeFish(W*(0.1+i*0.12), H*(0.2+Math.random()*0.6), 
+                         0.9+Math.random()*0.7, Math.random()*Math.PI*2, p[0],p[1]));
+    }
+    // Add a large center fish
+    fish.push(makeFish(W*0.5, H*0.5, 1.8, 0, '#00d4ff','#0066aa'));
+  }
+  initFish();
+  window.addEventListener('resize', initFish);
+
+  // Bubbles
+  for(let i=0;i<40;i++) bubbles.push({ x:Math.random()*1920, y:Math.random()*1080, r:1+Math.random()*3, vy:0.3+Math.random()*0.6, alpha:0.1+Math.random()*0.3 });
+
+  function drawFish(f){
+    ctx.save();
+    ctx.translate(f.x, f.y);
+    const s = f.scale;
+    const tailWag = Math.sin(f.tailPhase)*0.35;
+    ctx.rotate(tailWag*0.08);
+    ctx.globalAlpha = f.alpha;
+
+    // TAIL FINS (Halfmoon spread)
+    const grad = ctx.createRadialGradient(0,0,0,0,0,80*s);
+    grad.addColorStop(0, f.color1+'cc');
+    grad.addColorStop(1, f.color2+'33');
+
+    // Upper fan
+    ctx.beginPath();
+    ctx.moveTo(-10*s, 0);
+    for(let a=-Math.PI*0.85; a<=Math.PI*0.85; a+=0.05){
+      const r = (65+15*Math.sin(a*3+f.tailPhase))*s;
+      ctx.lineTo(Math.cos(a)*r - 40*s, Math.sin(a)*r);
+    }
+    ctx.closePath();
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Body
+    const bodyGrad = ctx.createLinearGradient(-30*s,-12*s,30*s,12*s);
+    bodyGrad.addColorStop(0, f.color2);
+    bodyGrad.addColorStop(0.5, f.color1);
+    bodyGrad.addColorStop(1, f.color2);
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 32*s, 11*s, 0, 0, Math.PI*2);
+    ctx.fillStyle = bodyGrad;
+    ctx.fill();
+
+    // Eye
+    ctx.beginPath();
+    ctx.arc(20*s, -3*s, 4*s, 0, Math.PI*2);
+    ctx.fillStyle = '#001122';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(21*s, -4*s, 1.5*s, 0, Math.PI*2);
+    ctx.fillStyle = '#ffffff88';
+    ctx.fill();
+
+    // Dorsal fin
+    ctx.beginPath();
+    ctx.moveTo(5*s, -11*s);
+    ctx.quadraticCurveTo(15*s, -22*s, 25*s, -11*s);
+    ctx.closePath();
+    ctx.fillStyle = f.color1+'99';
+    ctx.fill();
+
+    // Shimmer
+    ctx.beginPath();
+    ctx.ellipse(5*s, -2*s, 10*s, 4*s, -0.3, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(255,255,255,0.15)';
+    ctx.fill();
+
+    ctx.restore();
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+
+    // Background gradient
+    const bg = ctx.createLinearGradient(0,0,W,H);
+    bg.addColorStop(0,'#020811');
+    bg.addColorStop(0.5,'#040c1a');
+    bg.addColorStop(1,'#020811');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0,0,W,H);
+
+    // Water shimmer
+    for(let i=0;i<5;i++){
+      ctx.beginPath();
+      ctx.moveTo(0, H*(0.3+i*0.1));
+      for(let x=0;x<=W;x+=20){
+        ctx.lineTo(x, H*(0.3+i*0.1) + Math.sin(x*0.01+Date.now()*0.0008+i)*15);
+      }
+      ctx.strokeStyle = `rgba(0,100,160,${0.04-i*0.005})`;
+      ctx.lineWidth = 30;
+      ctx.stroke();
+    }
+
+    // Bubbles
+    bubbles.forEach(b=>{
+      b.y -= b.vy;
+      if(b.y < -10) b.y = H+10;
+      ctx.beginPath();
+      ctx.arc(b.x % W, b.y % H, b.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(100,200,255,${b.alpha})`;
+      ctx.fill();
+    });
+
+    // Fish
+    fish.forEach(f=>{
+      f.t += 0.006;
+      f.tailPhase += 0.08;
+      f.x += f.vx + Math.sin(f.t)*0.3;
+      f.y += f.vy + Math.cos(f.t*0.7)*0.2;
+      // Wrap around
+      if(f.x < -100) f.x = W+100;
+      if(f.x > W+100) f.x = -100;
+      if(f.y < 50) { f.vy += 0.05; }
+      if(f.y > H-50) { f.vy -= 0.05; }
+      f.vx *= 0.998;
+      f.vy *= 0.998;
+      drawFish(f);
+    });
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+/* ── CATEGORY FISH CANVASES ── */
+function drawCatFish(id, color1, color2, type){
+  const canvas = document.getElementById(id);
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,260,200);
+    ctx.save();
+    ctx.translate(130,100);
+    const wag = Math.sin(t)*0.25;
+
+    // Tail
+    if(type==='crowntail'){
+      // Spiky crown tail
+      for(let i=-8;i<=8;i++){
+        const a = (i/8)*Math.PI*0.8 + wag;
+        ctx.beginPath();
+        ctx.moveTo(-10,0);
+        ctx.lineTo(-10+Math.cos(a+Math.PI)*80, Math.sin(a+Math.PI)*80);
+        ctx.strokeStyle = color1+(i%2===0?'cc':'66');
+        ctx.lineWidth = 3;
+        ctx.stroke();
+      }
+    } else {
+      // Halfmoon fan
+      const grad = ctx.createRadialGradient(0,0,0,-40,0,80);
+      grad.addColorStop(0, color1+'aa');
+      grad.addColorStop(1, color2+'22');
+      ctx.beginPath();
+      ctx.moveTo(-10,0);
+      for(let a=-Math.PI*0.8+wag; a<=Math.PI*0.8+wag; a+=0.04){
+        ctx.lineTo(Math.cos(a+Math.PI)*75-10, Math.sin(a+Math.PI)*75);
+      }
+      ctx.closePath();
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+
+    // Body
+    const bg = ctx.createLinearGradient(-35,-12,35,12);
+    bg.addColorStop(0, color2);
+    bg.addColorStop(0.5, color1);
+    bg.addColorStop(1, color2);
+    ctx.beginPath();
+    ctx.ellipse(0,0,35,12,0,0,Math.PI*2);
+    ctx.fillStyle = bg;
+    ctx.fill();
+
+    // Eye
+    ctx.beginPath(); ctx.arc(22,-4,4,0,Math.PI*2);
+    ctx.fillStyle='#001'; ctx.fill();
+    ctx.beginPath(); ctx.arc(23,-5,1.5,0,Math.PI*2);
+    ctx.fillStyle='#fff8'; ctx.fill();
+
+    // Dorsal
+    ctx.beginPath();
+    ctx.moveTo(5,-12); ctx.quadraticCurveTo(16,-24,26,-12);
+    ctx.closePath();
+    ctx.fillStyle = color1+'88';
+    ctx.fill();
+
+    ctx.restore();
+    t+=0.05;
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+drawCatFish('catFish1','#4488ff','#002299','halfmoon');
+drawCatFish('catFish2','#ff4400','#880000','halfmoon');
+drawCatFish('catFish3','#00ffaa','#006644','crowntail');
+
+/* ── NEW ARRIVALS DATA ── */
+const fishData = [
+  { badge:'new', badgeClass:'badge-new', cat:'Halfmoon', name:'Blue Marble HM', desc:'Pola marble biru elektrik dengan sirip lebar sempurna', price:'Rp 185.000', col:'#0066cc', col2:'#0033aa' },
+  { badge:'rare', badgeClass:'badge-rare', cat:'Giant Betta', name:'Giant Red Dragon', desc:'Ukuran 9cm, merah menyala dengan sisik berkilau', price:'Rp 350.000', col:'#cc2200', col2:'#880000' },
+  { badge:'new', badgeClass:'badge-new', cat:'Crowntail', name:'Purple Galaxy CT', desc:'Ungu galaksi dengan ekor mahkota yang unik & panjang', price:'Rp 220.000', col:'#8800cc', col2:'#440066' },
+  { badge:'new', badgeClass:'badge-new', cat:'Plakat HM', name:'Nemo Plakat', desc:'Pola nemo oranye putih yang cerah dan kontras', price:'Rp 165.000', col:'#ff6600', col2:'#cc3300' },
+  { badge:'rare', badgeClass:'badge-rare', cat:'Halfmoon', name:'Yellow Koi HM', desc:'Koi kuning emas langka dengan fin spread 180°', price:'Rp 280.000', col:'#ffaa00', col2:'#cc6600' },
+  { badge:'new', badgeClass:'badge-new', cat:'Giant Betta', name:'Giant Black Dragon', desc:'Giant hitam metalik, tubuh jumbo garang maksimal', price:'Rp 400.000', col:'#222255', col2:'#111133' },
+];
+
+function renderArrivals(){
+  const grid = document.getElementById('arrivalsGrid');
+  grid.innerHTML = fishData.map((f,i)=>`
+    <div class="fish-card reveal reveal-delay-${i%3+1}">
+      <div class="fish-card-img">
+        <canvas id="fc${i}" class="fish-card-canvas" width="400" height="260"></canvas>
+        <div class="fish-card-badge ${f.badgeClass}">${f.badge.toUpperCase()}</div>
+      </div>
+      <div class="fish-card-body">
+        <div class="fish-card-category">${f.cat}</div>
+        <div class="fish-card-name">${f.name}</div>
+        <div class="fish-card-desc">${f.desc}</div>
+        <div class="fish-card-footer">
+          <div class="fish-price"><span>Harga</span>${f.price}</div>
+          <a href="https://wa.me/628123456789?text=Halo%2C%20saya%20tertarik%20dengan%20${encodeURIComponent(f.name)}" class="btn-cart" target="_blank">Order WA</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Draw fish on each card
+  setTimeout(()=>{
+    fishData.forEach((f,i)=>{
+      drawCardFish('fc'+i, f.col, f.col2, f.cat==='Crowntail');
+    });
+    initReveal();
+  },50);
+}
+
+function drawCardFish(id, c1, c2, isCrown){
+  const canvas = document.getElementById(id);
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let t=Math.random()*Math.PI*2;
+
+  function draw(){
+    const W=canvas.width, H=canvas.height;
+    ctx.clearRect(0,0,W,H);
+
+    // BG
+    const bg = ctx.createLinearGradient(0,0,W,H);
+    bg.addColorStop(0,'#030810'); bg.addColorStop(1,'#060d1a');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+    // Shimmer lines
+    for(let i=0;i<3;i++){
+      ctx.beginPath();
+      ctx.moveTo(0, H*(0.3+i*0.2));
+      for(let x=0;x<=W;x+=15) ctx.lineTo(x, H*(0.3+i*0.2)+Math.sin(x*0.02+t+i)*8);
+      ctx.strokeStyle=`rgba(0,80,120,0.06)`; ctx.lineWidth=20; ctx.stroke();
+    }
+
+    ctx.save();
+    ctx.translate(W/2, H/2+Math.sin(t*0.7)*5);
+    const wag = Math.sin(t)*0.3;
+    const s = 1.4;
+
+    if(isCrown){
+      for(let i=-10;i<=10;i++){
+        const a=(i/10)*Math.PI*0.85+wag+Math.PI;
+        ctx.beginPath(); ctx.moveTo(-10*s,0);
+        ctx.lineTo(-10*s+Math.cos(a)*85*s, Math.sin(a)*85*s);
+        ctx.strokeStyle = i%2===0 ? c1+'dd' : c2+'88';
+        ctx.lineWidth=3*s; ctx.stroke();
+      }
+    } else {
+      const grad=ctx.createRadialGradient(-40*s,0,0,-40*s,0,85*s);
+      grad.addColorStop(0,c1+'cc'); grad.addColorStop(1,c2+'22');
+      ctx.beginPath(); ctx.moveTo(-10*s,0);
+      for(let a=-Math.PI*0.85+wag; a<=Math.PI*0.85+wag; a+=0.04)
+        ctx.lineTo(Math.cos(a+Math.PI)*82*s-10*s, Math.sin(a+Math.PI)*82*s);
+      ctx.closePath(); ctx.fillStyle=grad; ctx.fill();
+    }
+
+    // Body
+    const bg2=ctx.createLinearGradient(-38*s,-14*s,38*s,14*s);
+    bg2.addColorStop(0,c2); bg2.addColorStop(0.5,c1); bg2.addColorStop(1,c2);
+    ctx.beginPath(); ctx.ellipse(0,0,38*s,13*s,0,0,Math.PI*2);
+    ctx.fillStyle=bg2; ctx.fill();
+
+    // Shimmer
+    ctx.beginPath(); ctx.ellipse(4*s,-2*s,13*s,5*s,-0.3,0,Math.PI*2);
+    ctx.fillStyle='rgba(255,255,255,0.12)'; ctx.fill();
+
+    // Eye
+    ctx.beginPath(); ctx.arc(26*s,-4*s,5*s,0,Math.PI*2); ctx.fillStyle='#000d1a'; ctx.fill();
+    ctx.beginPath(); ctx.arc(27*s,-5.5*s,2*s,0,Math.PI*2); ctx.fillStyle='#ffffff99'; ctx.fill();
+
+    // Dorsal
+    ctx.beginPath(); ctx.moveTo(5*s,-13*s); ctx.quadraticCurveTo(17*s,-28*s,28*s,-13*s);
+    ctx.closePath(); ctx.fillStyle=c1+'77'; ctx.fill();
+
+    ctx.restore();
+    t+=0.045;
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+renderArrivals();
+
+/* ── SCROLL REVEAL ── */
+function initReveal(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+initReveal();
+
+/* ── SEARCH ── */
+function doSearch(e){
+  if(e.key==='Enter'){
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    if(!q) return;
+    const terms = { 'halfmoon':'#new-arrivals','plakat':'#categories','giant':'#categories','crowntail':'#categories','packing':'#garansi','doa':'#garansi','garansi':'#garansi','kontak':'#contact','order':'#contact' };
+    const found = Object.keys(terms).find(k=>q.includes(k));
+    if(found) { document.querySelector(terms[found]).scrollIntoView({behavior:'smooth'}); }
+    else { document.getElementById('new-arrivals').scrollIntoView({behavior:'smooth'}); }
+    document.getElementById('searchInput').value='';
+  }
+}
+
+/* ── FORM SUBMIT ── */
+function submitForm(){
+  const inputs = document.querySelectorAll('#contact input, #contact textarea, #contact select');
+  const nama = inputs[0].value||'Pelanggan';
+  const wa = inputs[1].value||'';
+  const kota = inputs[2].value||'';
+  const jenis = inputs[3].value||'';
+  const pesan = inputs[4].value||'';
+  const msg = `Halo Premium Betta Gallery!%0A%0ANama: ${encodeURIComponent(nama)}%0ANo WA: ${encodeURIComponent(wa)}%0AKota Tujuan: ${encodeURIComponent(kota)}%0AJenis Ikan: ${encodeURIComponent(jenis)}%0APesan: ${encodeURIComponent(pesan)}`;
+  window.open(`https://wa.me/628123456789?text=${msg}`, '_blank');
+}
+
+/* ── TOAST ── */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = '✓ ' + msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
